@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ki3at8lgk8w"]
+
+[ext_resource type="PackedScene" uid="uid://dpyacbswbqlgd" path="res://pair_of_meshes.tscn" id="1_2poop"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0neik"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hqhrp"]
+sky_material = SubResource("ProceduralSkyMaterial_0neik")
+
+[sub_resource type="Environment" id="Environment_exjje"]
+background_mode = 2
+sky = SubResource("Sky_hqhrp")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_exjje")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9109, -0.412628, 0, 0.412628, 0.9109, -0.000947833, 0.00293851, 3.342)
+
+[node name="PairOfMeshes" parent="." instance=ExtResource("1_2poop")]
+transform = Transform3D(1, 0, 0, 0, 0.966645, -0.256121, 0, 0.256121, 0.966645, 0, 0, 0)
+
+[node name="LeftMeshes" parent="." instance=ExtResource("1_2poop")]
+transform = Transform3D(-0.917134, -0.259188, -0.302798, -0.396203, 0.675673, 0.621683, 0.0434596, 0.690136, -0.722373, -4.37535, 0, -2.16488)
+
+[node name="RightMeshes" parent="." instance=ExtResource("1_2poop")]
+transform = Transform3D(0.0493708, -0.292139, 0.00725446, -5.72826e-05, 0.00669326, 0.363718, -0.124254, -0.116081, 0.00271478, 1.45331, 0, 2.20676)

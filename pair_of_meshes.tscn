@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpyacbswbqlgd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5m5qf"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_1ss0r"]
+
+[node name="PairOfMeshes" type="Node3D"]
+
+[node name="Pill" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250442, 2.40194, 0.15769)
+mesh = SubResource("CapsuleMesh_5m5qf")
+
+[node name="Trongle" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.156967, -0.886744, -0.434794, 0.676703, -0.41723, 0.606624, -0.71933, -0.199006, 0.665554, 0.108423, 0.928709, 3.18553)
+mesh = SubResource("PrismMesh_1ss0r")
